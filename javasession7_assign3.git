@@ -1,0 +1,23 @@
+package com.howtodoinjava.demo.npe;
+ 
+public class SampleNPE {
+    public static void main(String[] args) {
+        // call one method at a time
+        doSomething(null);
+        doSomethingElse(null);
+    }
+ 
+    private static String doSomething(final String param) {
+        System.out.println(param.toString());
+        return "I am done !!";
+    }
+ 
+    private static String doSomethingElse(final String param) {
+        if (param == null) {
+            throw new NullPointerException(
+                    " :: Parameter 'param' was null inside method 'doSomething'.");
+        }
+        System.out.println(param.toString());
+        return "I am done !!";
+    }
+}
